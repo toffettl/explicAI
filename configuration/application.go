@@ -41,7 +41,6 @@ func (a *Application) Start() {
 
 	log.LogInfo(ctx, a.config.GetString("app.name")+" is starting on "+host+"...")
 	log.LogError(ctx, "server falal error", a.server.Start(host))
-
 }
 
 func (a *Application) registerControllers() {

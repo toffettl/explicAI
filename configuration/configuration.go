@@ -2,11 +2,9 @@ package configuration
 
 import "github.com/spf13/viper"
 
-var (
-	config = viper.New()
-)
+var config = viper.New()
 
-func Init() *viper.Viper{
+func Init() *viper.Viper {
 	defaultConfigs()
 
 	config.AutomaticEnv()
