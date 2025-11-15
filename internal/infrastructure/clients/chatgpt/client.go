@@ -10,6 +10,7 @@ const (
 type (
 	ChatgptFunctionCallRequest struct {
 		Model string `json:"model"`
+		Messages []Message `json:"messages"`
 	}
 
 	Message struct {
