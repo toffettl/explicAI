@@ -155,8 +155,11 @@ func (c *Client) FullTextOrganize(ctx context.Context, transcription string) (*s
 	}
 
 	if len(response.Choices) <= 0 || response.Choices[0].Message.Content == "" {
-		
+		return nil, fmt.Errorf("error on chatgpt full text organize request: empty response")
 	}
+
+	responseText := response.Choices[0].Message.Content
+	return &responseText, nil
 }
 
 func (c *Client) buildResumeRequest(transcription string) ChatgptFunctionCallRequest {
